@@ -1,2 +1,2 @@
-  # React-Notes-App
- - Full-Stack Notes APP
+  # React-LMS-App
+ - Full-Stack Learning management system APP

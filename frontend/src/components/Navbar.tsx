@@ -65,7 +65,9 @@ const Navbar = () => {
 							Profile
 						</NavLink>
 					)}
-					<Weather />
+					<NavLink to="/weather" className={navLinkClass}>
+						Weather
+					</NavLink>
 					{!user && (
 						<NavLink
 							to="/register"

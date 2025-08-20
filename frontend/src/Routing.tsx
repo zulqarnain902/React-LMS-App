@@ -14,6 +14,7 @@ import ResetPasswordPage from "./pages/ResetPasswordPage";
 import SetNewPasswordPage from "./pages/SetNewPasswordPage";
 import { UserAccountDeletion } from "./components/user-management/UserAccountDeletion";
 import { UserNotes } from "./components/user-management/UserNotes";
+import Weather from "./components/weather";
 
 const router = createBrowserRouter([
 	{
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
 		path: "/login",
 		element: (
 				<LoginPage />
+		),
+	},
+	{
+		path: "/weather",
+		element: (
+				<Weather />
 		),
 	},
 	{

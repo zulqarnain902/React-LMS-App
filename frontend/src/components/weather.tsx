@@ -39,8 +39,8 @@ const Weather = () => {
 
     return (
         <Layout>
-            <div className=" flex justify-center items-center min-h-screen rounded-lg bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
-                <div className="backdrop-blur-lg bg-white/20 shadow-2xl rounded-2xl w-96 min-h-[480px] flex flex-col items-center p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+            <div className=" flex justify-center items-center min-h-screen rounded-lg ">
+                <div className="backdrop-blur-lg bg-white/20 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 shadow-2xl rounded-2xl w-96 min-h-[480px] flex flex-col items-center p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                     
                     {/* Title */}
                     <h1 className="text-2xl font-bold text-white mb-3 tracking-wide">
@@ -52,7 +52,7 @@ const Weather = () => {
                     {loading ? (
                         <span className="text-gray-200 text-lg animate-pulse">Fetching weather...</span>
                     ) : weather ? (
-                        <div className="flex flex-col items-center gap-4 text-white text-center">
+                        <div className="flex flex-col items-center gap-4 text-white text-center ">
                             {/* Weather Icon */}
                             <img
                                 src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}

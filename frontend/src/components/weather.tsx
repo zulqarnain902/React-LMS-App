@@ -10,6 +10,7 @@ const Weather = () => {
     const getWeather = async () => {
         try {
             const response = await fetchWeather(search);
+            console.log("Weather data:", response.data);
             setWeather(response.data);
             setLocation(search);
         } catch (error) {

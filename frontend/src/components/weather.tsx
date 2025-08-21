@@ -62,7 +62,17 @@ const Weather = () => {
 
                             {/* Description */}
                             <p className="capitalize text-xl font-semibold">{weather.weather[0].description}</p>
-
+{/* Sunrise & Sunset */}
+                            <div className="flex items-center justify-center gap-6 mt-3">
+                                <div className="flex flex-col items-center">
+                                    <Sun className="text-yellow-300" size={22} />
+                                    <span className="text-sm">{formatTime(weather.sys.sunrise)}</span>
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <Moon className="text-orange-300" size={22} />
+                                    <span className="text-sm">{formatTime(weather.sys.sunset)}</span>
+                                </div>
+                            </div>
                             {/* Temperature */}
                             <div className="flex items-center gap-2 text-lg font-medium">
                                 <Thermometer className="text-red-400" size={22} />
@@ -81,17 +91,7 @@ const Weather = () => {
                                 <span>{weather.main.humidity}% Humidity</span>
                             </div>
 
-                            {/* Sunrise & Sunset */}
-                            <div className="flex items-center justify-center gap-6 mt-3">
-                                <div className="flex flex-col items-center">
-                                    <Sun className="text-yellow-300" size={22} />
-                                    <span className="text-sm">{formatTime(weather.sys.sunrise)}</span>
-                                </div>
-                                <div className="flex flex-col items-center">
-                                    <Moon className="text-orange-300" size={22} />
-                                    <span className="text-sm">{formatTime(weather.sys.sunset)}</span>
-                                </div>
-                            </div>
+                            
                         </div>
                     ) : (
                         <span className="text-red-300 text-lg">No weather data available</span>

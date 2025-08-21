@@ -40,7 +40,7 @@ const Weather = () => {
     return (
         <Layout>
             <div className=" flex justify-center items-center min-h-screen rounded-lg ">
-                <div className="backdrop-blur-lg bg-white/20 bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 shadow-2xl rounded-2xl w-96 min-h-[480px] flex flex-col items-center p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                <div className="backdrop-blur-lg bg-white/20 bg-gradient-to-br from-blue-500 via-blue-700 to-blue-500 shadow-2xl rounded-2xl w-96 min-h-[480px] flex flex-col items-center p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
                     
                     {/* Title */}
                     <h1 className="text-2xl font-bold text-white mb-3 tracking-wide">

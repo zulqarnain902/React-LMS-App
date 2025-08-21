@@ -5,7 +5,7 @@ const Footer = () => {
 		<footer className="text-white bg-primary body-font">
 			<div className="container px-5 py-6 mx-auto text-center">
 				<p className="text-sm text-white/90">
-					© {new Date().getFullYear()} Notes App — Built by{" "}
+					© {new Date().getFullYear()} LMS App — Built by{" "}
 					<Link
 						to="https://zulqarnain/"
 						className="text-white underline hover:text-white/80"

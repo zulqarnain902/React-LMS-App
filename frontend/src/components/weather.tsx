@@ -19,7 +19,7 @@ const Weather = () => {
 
     return (
         // <div>Weather: {weather ? weather : "Loading..."}</div>
-        <div className='ml-2 flex justify-between items-center gap-2 bg-gray-800 p-4 text-white rounded-lg'>
+        <div className='ml-2 flex justify-between items-center gap-2 bg-gray-800 p-4 text-white rounded-lg '>
 
             Weather in {location}
             <div className='border-l-2 border-blue-500 pl-2  flex flex-col items-center'>
@@ -33,10 +33,7 @@ const Weather = () => {
                     <span>Loading...</span>
                 )}
             </div>
-
-
         </div>
     )
 }
-
 export default Weather;

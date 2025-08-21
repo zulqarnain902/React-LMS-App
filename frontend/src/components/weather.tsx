@@ -5,8 +5,8 @@ import Layout from "@/Layout.js";
 
 const Weather = () => {
     const [weather, setWeather] = useState(null);
-    const [location, setLocation] = useState("Karachi");
-    const [search, setSearch] = useState("Karachi");
+    const [location, setLocation] = useState("Islamabad");
+    const [search, setSearch] = useState("Islamabad");
     const [loading, setLoading] = useState(true);
 
     // Fetch weather data

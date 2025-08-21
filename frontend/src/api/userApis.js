@@ -2,7 +2,8 @@ import axios from "axios"
 import { data } from "react-router";
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    // baseURL: "http://localhost:5000/api",
+    baseURL: "https://react-lms-app-backend.vercel.app/api",
     headers: {
         "Content-Type": "application/json",
     },

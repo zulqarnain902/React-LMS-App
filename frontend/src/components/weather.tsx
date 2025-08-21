@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchWeather } from "../api/weatherApi.js";
-import { Cloud, Wind, Thermometer, Search, Droplets } from "lucide-react";
+import { Cloud, Wind, Thermometer, Search, Droplets, Sun, Moon } from "lucide-react";
 import Layout from "@/Layout.js";
 
 const Weather = () => {
@@ -31,15 +31,22 @@ const Weather = () => {
     // Convert Kelvin → Celsius
     const convertToCelsius = (kelvin) => (kelvin - 273.15).toFixed(1);
 
+    // Convert UNIX timestamp → Readable time
+    const formatTime = (timestamp) => {
+        const date = new Date(timestamp * 1000);
+        return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    };
+
     return (
         <Layout>
             <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500">
-                <div className="backdrop-blur-lg bg-white/20 shadow-2xl rounded-2xl w-96 min-h-[420px] flex flex-col items-center p-6 border border-white/30 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                <div className="backdrop-blur-lg bg-white/20 shadow-2xl rounded-2xl w-96 min-h-[480px] flex flex-col items-center p-6 transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    
                     {/* Title */}
                     <h1 className="text-2xl font-bold text-white mb-3 tracking-wide">
                         Weather in <span className="text-yellow-300">{location}</span>
                     </h1>
-                    <div className="border-b border-white/40 w-full mb-4"></div>
+                    <div className="border-b border-white/20 w-full mb-4"></div>
 
                     {/* Weather Content */}
                     {loading ? (
@@ -73,6 +80,18 @@ const Weather = () => {
                                 <Droplets className="text-blue-300" size={22} />
                                 <span>{weather.main.humidity}% Humidity</span>
                             </div>
+
+                            {/* Sunrise & Sunset */}
+                            <div className="flex items-center justify-center gap-6 mt-3">
+                                <div className="flex flex-col items-center">
+                                    <Sun className="text-yellow-300" size={22} />
+                                    <span className="text-sm">{formatTime(weather.sys.sunrise)}</span>
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <Moon className="text-orange-300" size={22} />
+                                    <span className="text-sm">{formatTime(weather.sys.sunset)}</span>
+                                </div>
+                            </div>
                         </div>
                     ) : (
                         <span className="text-red-300 text-lg">No weather data available</span>
@@ -85,7 +104,7 @@ const Weather = () => {
                             placeholder="Enter location..."
                             value={search}
                             onChange={(e) => setSearch(e.target.value)}
-                            className="border border-white/30 bg-white/20 text-white placeholder-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300 w-44"
+                            className="border border-transparent bg-white/20 text-white placeholder-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-300 w-44"
                         />
                         <button
                             onClick={getWeather}
